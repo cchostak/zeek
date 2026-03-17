@@ -2,13 +2,131 @@
 # Run with: docker compose --profile elk up -d filebeat
 
 filebeat.inputs:
-  - type: log
+  - type: filestream
+    id: zeek-filestream
     enabled: true
     paths:
       - /usr/share/filebeat/logs/*.log
     fields:
-      service: zeek
+      service:
+        name: zeek
     fields_under_root: true
+
+processors:
+  - dissect:
+      tokenizer: "/usr/share/filebeat/logs/%{zeek.log_type}.log"
+      field: log.file.path
+      target_prefix: ""
+      ignore_failure: true
+
+  - drop_event:
+      when:
+        regexp:
+          message: '^#'
+
+  - dissect:
+      when:
+        equals:
+          zeek.log_type: conn
+      tokenizer: "%{zeek.conn.ts}\t%{zeek.conn.uid}\t%{zeek.conn.orig_h}\t%{zeek.conn.orig_p}\t%{zeek.conn.resp_h}\t%{zeek.conn.resp_p}\t%{zeek.conn.proto}\t%{zeek.conn.service}\t%{zeek.conn.duration}\t%{zeek.conn.orig_bytes}\t%{zeek.conn.resp_bytes}\t%{zeek.conn.conn_state}\t%{zeek.conn.local_orig}\t%{zeek.conn.local_resp}\t%{zeek.conn.missed_bytes}\t%{zeek.conn.history}\t%{zeek.conn.orig_pkts}\t%{zeek.conn.orig_ip_bytes}\t%{zeek.conn.resp_pkts}\t%{zeek.conn.resp_ip_bytes}\t%{zeek.conn.tunnel_parents}"
+      field: message
+      target_prefix: ""
+      ignore_failure: true
+
+  - dissect:
+      when:
+        equals:
+          zeek.log_type: dns
+      tokenizer: "%{zeek.dns.ts}\t%{zeek.dns.uid}\t%{zeek.dns.orig_h}\t%{zeek.dns.orig_p}\t%{zeek.dns.resp_h}\t%{zeek.dns.resp_p}\t%{zeek.dns.proto}\t%{zeek.dns.trans_id}\t%{zeek.dns.rtt}\t%{zeek.dns.query}\t%{zeek.dns.qclass}\t%{zeek.dns.qclass_name}\t%{zeek.dns.qtype}\t%{zeek.dns.qtype_name}\t%{zeek.dns.rcode}\t%{zeek.dns.rcode_name}\t%{zeek.dns.aa}\t%{zeek.dns.tc}\t%{zeek.dns.rd}\t%{zeek.dns.ra}\t%{zeek.dns.z}\t%{zeek.dns.answers}\t%{zeek.dns.ttls}\t%{zeek.dns.rejected}"
+      field: message
+      target_prefix: ""
+      ignore_failure: true
+
+  - dissect:
+      when:
+        equals:
+          zeek.log_type: http
+      tokenizer: "%{zeek.http.ts}\t%{zeek.http.uid}\t%{zeek.http.orig_h}\t%{zeek.http.orig_p}\t%{zeek.http.resp_h}\t%{zeek.http.resp_p}\t%{zeek.http.trans_depth}\t%{zeek.http.method}\t%{zeek.http.host}\t%{zeek.http.uri}\t%{zeek.http.referrer}\t%{zeek.http.version}\t%{zeek.http.user_agent}\t%{zeek.http.origin}\t%{zeek.http.request_body_len}\t%{zeek.http.response_body_len}\t%{zeek.http.status_code}\t%{zeek.http.status_msg}\t%{zeek.http.info_code}\t%{zeek.http.info_msg}\t%{zeek.http.tags}\t%{zeek.http.username}\t%{zeek.http.password}\t%{zeek.http.proxied}\t%{zeek.http.orig_fuids}\t%{zeek.http.orig_filenames}\t%{zeek.http.orig_mime_types}\t%{zeek.http.resp_fuids}\t%{zeek.http.resp_filenames}\t%{zeek.http.resp_mime_types}"
+      field: message
+      target_prefix: ""
+      ignore_failure: true
+
+  - dissect:
+      when:
+        equals:
+          zeek.log_type: weird
+      tokenizer: "%{zeek.weird.ts}\t%{zeek.weird.uid}\t%{zeek.weird.orig_h}\t%{zeek.weird.orig_p}\t%{zeek.weird.resp_h}\t%{zeek.weird.resp_p}\t%{zeek.weird.name}\t%{zeek.weird.addl}\t%{zeek.weird.notice}\t%{zeek.weird.peer}\t%{zeek.weird.source}"
+      field: message
+      target_prefix: ""
+      ignore_failure: true
+
+  - drop_fields:
+      when:
+        equals:
+          zeek.dns.rtt: "-"
+      fields: ["zeek.dns.rtt"]
+      ignore_missing: true
+
+  - drop_fields:
+      when:
+        equals:
+          zeek.dns.qclass: "-"
+      fields: ["zeek.dns.qclass"]
+      ignore_missing: true
+
+  - drop_fields:
+      when:
+        equals:
+          zeek.dns.qtype: "-"
+      fields: ["zeek.dns.qtype"]
+      ignore_missing: true
+
+  - drop_fields:
+      when:
+        equals:
+          zeek.http.info_code: "-"
+      fields: ["zeek.http.info_code"]
+      ignore_missing: true
+
+  - drop_fields:
+      when:
+        has_fields: ["zeek.dns.aa", "zeek.dns.tc", "zeek.dns.rd", "zeek.dns.ra", "zeek.dns.rejected"]
+      fields: ["zeek.dns.aa", "zeek.dns.tc", "zeek.dns.rd", "zeek.dns.ra", "zeek.dns.rejected"]
+      ignore_missing: true
+
+  - drop_fields:
+      when:
+        has_fields: ["zeek.weird.notice"]
+      fields: ["zeek.weird.notice"]
+      ignore_missing: true
+
+  - convert:
+      ignore_missing: true
+      fail_on_error: false
+      fields:
+        - { from: "zeek.conn.orig_p", type: long }
+        - { from: "zeek.conn.resp_p", type: long }
+        - { from: "zeek.conn.duration", type: float }
+        - { from: "zeek.conn.orig_bytes", type: long }
+        - { from: "zeek.conn.resp_bytes", type: long }
+        - { from: "zeek.conn.orig_pkts", type: long }
+        - { from: "zeek.conn.resp_pkts", type: long }
+        - { from: "zeek.dns.orig_p", type: long }
+        - { from: "zeek.dns.resp_p", type: long }
+        - { from: "zeek.dns.trans_id", type: long }
+        - { from: "zeek.dns.qclass", type: long }
+        - { from: "zeek.dns.qtype", type: long }
+        - { from: "zeek.dns.rcode", type: long }
+        - { from: "zeek.dns.z", type: long }
+        - { from: "zeek.dns.rtt", type: float }
+        - { from: "zeek.http.orig_p", type: long }
+        - { from: "zeek.http.resp_p", type: long }
+        - { from: "zeek.http.trans_depth", type: long }
+        - { from: "zeek.http.request_body_len", type: long }
+        - { from: "zeek.http.response_body_len", type: long }
+        - { from: "zeek.http.status_code", type: long }
+        - { from: "zeek.weird.orig_p", type: long }
+        - { from: "zeek.weird.resp_p", type: long }
 
 # Optional: set up index template/dashboards in Kibana
 setup.kibana:

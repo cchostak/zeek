@@ -1,6 +1,6 @@
 # Zeek learning scaffold commands
 
-.PHONY: all build up down ps logs exec zeek-run
+.PHONY: all build up down ps logs exec zeek-run elk-up elk-down elk-logs elk-reload-filebeat kibana-bootstrap
 
 all: up
 
@@ -21,6 +21,12 @@ elk-down:
 
 elk-logs:
 	docker compose --profile elk logs -f
+
+elk-reload-filebeat:
+	docker compose --profile elk up -d --build filebeat
+
+kibana-bootstrap:
+	bash scripts/bootstrap-kibana.sh
 
 ps:
 	docker compose ps

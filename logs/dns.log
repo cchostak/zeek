@@ -3,8 +3,8 @@
 #empty_field	(empty)
 #unset_field	-
 #path	dns
-#open	2026-03-17-14-13-22
+#open	2026-03-17-14-36-15
 #fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	proto	trans_id	rtt	query	qclass	qclass_name	qtype	qtype_name	rcode	rcode_name	AA	TC	RD	RA	Z	answers	TTLs	rejected
 #types	time	string	addr	port	addr	port	enum	count	interval	string	count	string	count	string	count	string	bool	bool	bool	bool	count	vector[string]	vector[interval]	bool
-1773756801.346612	CYM2cGfOWbD8yiKUh	10.0.0.50	53535	10.0.0.60	53	udp	4660	-	-	-	-	-	-	0	NOERROR	F	F	F	F	0	-	-	F
-#close	2026-03-17-14-13-22
+1773758174.425341	CKBTWp4MoiEarQ0bd5	10.0.0.50	53535	10.0.0.60	53	udp	4660	-	-	-	-	-	-	0	NOERROR	F	F	F	F	0	-	-	F
+#close	2026-03-17-14-36-15

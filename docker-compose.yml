@@ -58,7 +58,7 @@ services:
       - "5602:5601"
 
   filebeat:
-    image: docker.elastic.co/beats/filebeat:8.10.2
+    build: ./filebeat
     container_name: zeek-filebeat
     profiles:
       - elk
@@ -67,10 +67,8 @@ services:
     depends_on:
       - elasticsearch
       - kibana
-    user: root
     volumes:
       - ./logs:/usr/share/filebeat/logs:ro
-      - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
 
 networks:
   zeek-net:

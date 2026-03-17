@@ -75,3 +75,44 @@ This repo is built for experimentation with Zeek via Docker Compose.
 
 - `zeek` service is configured to remain running with a sleep loop for interactive use.
 - For packet capture live interfaces, best run Zeek on dedicated network namespace and avoid host traffic contamination.
+
+## ELK + Parsed Zeek Logs
+
+1. Start Elasticsearch, Kibana, and Filebeat:
+
+   ```bash
+   make elk-up
+   ```
+
+2. Rebuild Filebeat if parsing config changes:
+
+   ```bash
+   make elk-reload-filebeat
+   ```
+
+3. Generate traffic and Zeek logs:
+
+   ```bash
+   make synth-run
+   ```
+
+4. Create Kibana data view + starter dashboard:
+
+   ```bash
+   make kibana-bootstrap
+   ```
+
+5. Open Kibana:
+
+   - URL: `http://localhost:5602`
+   - Dashboard: `Zeek Overview`
+
+### Parsed fields included
+
+- `zeek.log_type` (derived from log filename)
+- `zeek.conn.*` for `conn.log`
+- `zeek.dns.*` for `dns.log`
+- `zeek.http.*` for `http.log` (core fields + remaining tail)
+- `zeek.weird.*` for `weird.log`
+
+Comment/header rows from Zeek logs (lines starting with `#`) are dropped at ingest time.
