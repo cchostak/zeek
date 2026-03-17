@@ -3,9 +3,34 @@
 #empty_field	(empty)
 #unset_field	-
 #path	files
-#open	2026-03-17-14-36-15
+#open	2026-03-17-15-02-14
 #fields	ts	fuid	tx_hosts	rx_hosts	conn_uids	source	depth	analyzers	mime_type	filename	duration	local_orig	is_orig	seen_bytes	total_bytes	missing_bytes	overflow_bytes	timedout	parent_fuid	md5	sha1	sha256	extracted	extracted_cutoff	extracted_size
 #types	time	string	set[addr]	set[addr]	set[string]	string	count	set[string]	string	string	interval	bool	bool	count	count	count	count	bool	string	string	string	string	string	bool	count
-1773758174.423243	FYjinW3xQPiLReQo42	10.0.0.20	10.0.0.10	C4PyVW24rfcg9AoAO9	HTTP	0	(empty)	text/plain	-	0.000000	-	F	12	13	0	0	F	-	-	-	-	-	-	-
-1773758174.420885	Fozevm1BUXyZkihHn6	10.0.0.20	10.0.0.10	CA0kkW3YvKpsfK0jO1	HTTP	0	(empty)	text/plain	-	0.000000	-	F	12	13	0	0	F	-	-	-	-	-	-	-
-#close	2026-03-17-14-36-15
+1773759733.621675	FzX4Bo3ns0W1oFa9I3	210.140.92.183	45.112.92.14	CQNL0Z1XlDpCOSjIM6	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.624894	FxyXp5vItDJWgu4sc	189.18.222.9	172.217.14.206	CRva5VDIyE6bd17mf	HTTP	0	(empty)	text/json	-	0.000000	-	T	31	31	0	0	F	-	-	-	-	-	-	-
+1773759733.625360	FcGY2fYL9YFYh5bEk	172.217.14.206	189.18.222.9	CRva5VDIyE6bd17mf	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.628081	Fixsd423lRt0jatngl	151.101.1.69	201.44.88.30	C0oFHZ2M9RLcvmWVdf	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.630822	Fq5c472tyG34kzuyvj	93.184.216.34	201.44.88.30	CmIier42aObjZR6lr9	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.633805	FzAsef11eBXQwFZHXa	93.184.216.34	82.66.14.201	CLgD7W1ygGVSe1yD6c	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.636585	Fhe03b2gV1h5OaXEh7	151.101.1.69	201.44.88.30	CjUwFhePKsRw2Ydp6	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.639959	FC7rLX3hnZhSLDgTOb	81.2.69.142	45.112.92.14	C7DqKc21Qjm8hEGd1l	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.643336	FeEiad4KoR2fFxw5ig	210.140.92.183	73.162.21.44	CN1qAx4LjSfsoBfe47	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.647024	Fv83jw47ZOzJ59jG52	93.184.216.34	45.112.92.14	C4hY3A3azb7PUseiy9	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.650113	FaL1dG3y550By4Cnpe	172.217.14.206	73.162.21.44	C7Hufvro2ZORrUlik	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.653075	F9o6717KuMoKtQPel	172.217.14.206	45.112.92.14	CwWBnJXbMz4B1QPia	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.656762	F4CBLG1lwjMSdRNcg5	210.140.92.183	201.44.88.30	CEZxKsOIQtoZgcqVh	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.659719	FJsigm4sWhqoA20BF6	172.217.14.206	45.112.92.14	CMwORb2ZyoZSdrpOog	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.662923	Foxveu3YaamDRbtpKc	210.140.92.183	45.112.92.14	CPJ4pp13ZdazMDuCM1	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.665253	FmpFwR2PetDdK3vJx6	201.44.88.30	210.140.92.183	ChN9Re3NzD63XVHAh9	HTTP	0	(empty)	text/json	-	0.000000	-	T	31	31	0	0	F	-	-	-	-	-	-	-
+1773759733.665750	FiIm551XrBQiea82e9	210.140.92.183	201.44.88.30	ChN9Re3NzD63XVHAh9	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.668773	F9nPsU2TT5Nl25ej8k	210.140.92.183	201.44.88.30	C3MLkLokP7vBz1n7	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.672079	F7N0Bv1WAKcUKtLW3	172.217.14.206	82.66.14.201	CLyR563OiKmgUpaHMa	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.676123	FzDHEr1y05RoKwAELk	172.217.14.206	189.18.222.9	CyC4MP2o75baOqZ4ub	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.679245	FflHNw1ZM2snMdH8T7	172.217.14.206	45.112.92.14	CE5dys3WKtDmZ769S9	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.682212	FEKExcKXW50f8oRgk	172.217.14.206	201.44.88.30	CjEMR01ERZFN0GYfB	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.685077	FKLq8c3PUtfguHL6a7	189.18.222.9	93.184.216.34	CeZEhV1pL4yZW4Dfgf	HTTP	0	(empty)	text/json	-	0.000000	-	T	31	31	0	0	F	-	-	-	-	-	-	-
+1773759733.685588	Fex8aF4lkgjgN4bToc	93.184.216.34	189.18.222.9	CeZEhV1pL4yZW4Dfgf	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.689170	Fo2z4y1x9ginkXee5c	151.101.1.69	73.162.21.44	CxQHlk1WkyO6mK8SGf	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.693151	F0ANnx2USqWwZTPT53	151.101.1.69	189.18.222.9	C9BVTc1FJr9SZGYSgk	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+1773759733.696327	FodPW14bF4YsxPA27	81.2.69.142	45.112.92.14	C8LovQ3yGyhLJMpQN4	HTTP	0	(empty)	text/plain	-	0.000000	-	F	19	19	0	0	F	-	-	-	-	-	-	-
+#close	2026-03-17-15-02-14

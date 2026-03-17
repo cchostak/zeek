@@ -1,0 +1,15 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	ssh
+#open	2026-03-17-15-02-14
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	version	auth_success	auth_attempts	direction	client	server	cipher_alg	mac_alg	compression_alg	kex_alg	host_key_alg	host_key
+#types	time	string	addr	port	addr	port	count	bool	count	enum	string	string	string	string	string	string	string	string
+1773759733.769839	CFqXnZ3NCQMaQWMATd	73.162.21.44	44004	52.95.110.1	22	2	-	0	-	SSH-2.0-OpenSSH_9.3	SSH-2.0-OpenSSH_8.9	-	-	-	-	-	-
+1773759733.758790	ClVHKml1NwTbC8m19	82.66.14.201	44000	52.95.110.1	22	2	-	0	-	SSH-2.0-OpenSSH_9.3	SSH-2.0-OpenSSH_8.9	-	-	-	-	-	-
+1773759733.761630	Cym0Bl1zoBMHp6Yqga	73.162.21.44	44001	81.2.69.142	22	2	-	0	-	SSH-2.0-OpenSSH_9.3	SSH-2.0-OpenSSH_8.9	-	-	-	-	-	-
+1773759733.764457	CXTkFQ2wUE5bYT9BGa	82.66.14.201	44002	185.199.108.153	22	2	-	0	-	SSH-2.0-OpenSSH_9.3	SSH-2.0-OpenSSH_8.9	-	-	-	-	-	-
+1773759733.767128	CaCLicZF8ClSSzlmi	189.18.222.9	44003	185.199.108.153	22	2	-	0	-	SSH-2.0-OpenSSH_9.3	SSH-2.0-OpenSSH_8.9	-	-	-	-	-	-
+1773759733.773858	CSCoof1UFk2VpFAJH4	189.18.222.9	44005	31.13.71.36	22	2	-	0	-	SSH-2.0-OpenSSH_9.3	SSH-2.0-OpenSSH_8.9	-	-	-	-	-	-
+#close	2026-03-17-15-02-14

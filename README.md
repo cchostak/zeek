@@ -90,19 +90,31 @@ This repo is built for experimentation with Zeek via Docker Compose.
    make elk-reload-filebeat
    ```
 
-3. Generate traffic and Zeek logs:
+3. Install/update Elasticsearch ingest pipeline (GeoIP enrichment):
+
+   ```bash
+   make elastic-bootstrap
+   ```
+
+4. Generate traffic and Zeek logs:
 
    ```bash
    make synth-run
    ```
 
-4. Create Kibana data view + starter dashboard:
+5. Create Kibana data view + starter dashboard:
 
    ```bash
    make kibana-bootstrap
    ```
 
-5. Open Kibana:
+   Or bootstrap both Elasticsearch + Kibana assets in one command:
+
+   ```bash
+   make elk-bootstrap
+   ```
+
+6. Open Kibana:
 
    - URL: `http://localhost:5602`
    - Dashboard: `Zeek Overview`
@@ -116,3 +128,22 @@ This repo is built for experimentation with Zeek via Docker Compose.
 - `zeek.weird.*` for `weird.log`
 
 Comment/header rows from Zeek logs (lines starting with `#`) are dropped at ingest time.
+
+### Synthetic traffic profile
+
+`make synth-run` now generates a broader mix of traffic patterns:
+
+- Higher-volume HTTP sessions with mixed methods (`GET`, `POST`), URIs, and status codes (`200`, `201`, `302`, `404`, `500`)
+- DNS lookups for multiple domains and query types (`A`, `AAAA`), including some NXDOMAIN responses
+- Additional TCP service traffic on `22` (SSH-like banners) and `25` (SMTP-like exchanges)
+- ICMP echo traffic and UDP service traffic (`123` NTP-like and `514` syslog-like)
+- Public IP address ranges to enable GeoIP enrichment in Elasticsearch (`source.geo.*`, `destination.geo.*`)
+
+### Dashboard panels
+
+The bootstrap dashboard includes:
+
+- Event counters for conn/http/dns logs
+- Conn protocol mix chart
+- HTTP status distribution chart
+- Top destination countries table (from GeoIP enrichment)

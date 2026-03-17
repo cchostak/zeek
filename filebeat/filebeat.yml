@@ -90,6 +90,27 @@ processors:
 
   - drop_fields:
       when:
+        equals:
+          zeek.conn.duration: "-"
+      fields: ["zeek.conn.duration"]
+      ignore_missing: true
+
+  - drop_fields:
+      when:
+        equals:
+          zeek.conn.orig_bytes: "-"
+      fields: ["zeek.conn.orig_bytes"]
+      ignore_missing: true
+
+  - drop_fields:
+      when:
+        equals:
+          zeek.conn.resp_bytes: "-"
+      fields: ["zeek.conn.resp_bytes"]
+      ignore_missing: true
+
+  - drop_fields:
+      when:
         has_fields: ["zeek.dns.aa", "zeek.dns.tc", "zeek.dns.rd", "zeek.dns.ra", "zeek.dns.rejected"]
       fields: ["zeek.dns.aa", "zeek.dns.tc", "zeek.dns.rd", "zeek.dns.ra", "zeek.dns.rejected"]
       ignore_missing: true
@@ -98,6 +119,19 @@ processors:
       when:
         has_fields: ["zeek.weird.notice"]
       fields: ["zeek.weird.notice"]
+      ignore_missing: true
+
+  - copy_fields:
+      fields:
+        - { from: "zeek.conn.orig_h", to: "source.ip" }
+        - { from: "zeek.conn.resp_h", to: "destination.ip" }
+        - { from: "zeek.http.orig_h", to: "source.ip" }
+        - { from: "zeek.http.resp_h", to: "destination.ip" }
+        - { from: "zeek.dns.orig_h", to: "source.ip" }
+        - { from: "zeek.dns.resp_h", to: "destination.ip" }
+        - { from: "zeek.weird.orig_h", to: "source.ip" }
+        - { from: "zeek.weird.resp_h", to: "destination.ip" }
+      fail_on_error: false
       ignore_missing: true
 
   - convert:
@@ -134,6 +168,7 @@ setup.kibana:
 
 output.elasticsearch:
   hosts: ["http://elasticsearch:9200"]
+  pipeline: "zeek-geoip-pipeline"
 
 logging.level: info
 logging.to_files: false
