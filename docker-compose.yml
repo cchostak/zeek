@@ -1,0 +1,80 @@
+services:
+  zeek:
+    build:
+      context: .
+      dockerfile: zeek/Dockerfile
+    container_name: zeek-learning
+    networks:
+      - zeek-net
+    volumes:
+      - ./data:/data
+      - ./logs:/logs
+      - ./zeek-scripts:/usr/local/zeek/share/zeek/site
+
+  pcap-generator:
+    build: ./pcap-generator
+    container_name: zeek-pcap-generator
+    networks:
+      - zeek-net
+    volumes:
+      - ./data:/data
+    restart: "no"
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.10.2
+    container_name: zeek-elasticsearch
+    profiles:
+      - elk
+    networks:
+      - zeek-net
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - network.host=0.0.0.0
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    ports:
+      - "9201:9200"
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.10.2
+    container_name: zeek-kibana
+    profiles:
+      - elk
+    networks:
+      - zeek-net
+    depends_on:
+      - elasticsearch
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - SERVER_HOST=0.0.0.0
+      - XPACK_SECURITY_ENABLED=false
+    ports:
+      - "5602:5601"
+
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:8.10.2
+    container_name: zeek-filebeat
+    profiles:
+      - elk
+    networks:
+      - zeek-net
+    depends_on:
+      - elasticsearch
+      - kibana
+    user: root
+    volumes:
+      - ./logs:/usr/share/filebeat/logs:ro
+      - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+
+networks:
+  zeek-net:
+    driver: bridge
+
+volumes:
+  esdata:

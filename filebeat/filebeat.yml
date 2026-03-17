@@ -1,0 +1,21 @@
+# Filebeat configuration for ingesting Zeek logs into Elasticsearch.
+# Run with: docker compose --profile elk up -d filebeat
+
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - /usr/share/filebeat/logs/*.log
+    fields:
+      service: zeek
+    fields_under_root: true
+
+# Optional: set up index template/dashboards in Kibana
+setup.kibana:
+  host: "http://kibana:5601"
+
+output.elasticsearch:
+  hosts: ["http://elasticsearch:9200"]
+
+logging.level: info
+logging.to_files: false
