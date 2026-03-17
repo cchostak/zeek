@@ -60,6 +60,15 @@ processors:
       target_prefix: ""
       ignore_failure: true
 
+  - dissect:
+      when:
+        equals:
+          zeek.log_type: local_events
+      tokenizer: "%{zeek.local.ts}\t%{zeek.local.uid}\t%{zeek.local.src}\t%{zeek.local.dst}\t%{zeek.local.service}\t%{zeek.local.note}\t%{zeek.local.details}"
+      field: message
+      target_prefix: ""
+      ignore_failure: true
+
   - drop_fields:
       when:
         equals:
@@ -121,6 +130,20 @@ processors:
       fields: ["zeek.weird.notice"]
       ignore_missing: true
 
+  - drop_fields:
+      when:
+        equals:
+          zeek.local.src: "-"
+      fields: ["zeek.local.src"]
+      ignore_missing: true
+
+  - drop_fields:
+      when:
+        equals:
+          zeek.local.dst: "-"
+      fields: ["zeek.local.dst"]
+      ignore_missing: true
+
   - copy_fields:
       fields:
         - { from: "zeek.conn.orig_h", to: "source.ip" }
@@ -131,6 +154,8 @@ processors:
         - { from: "zeek.dns.resp_h", to: "destination.ip" }
         - { from: "zeek.weird.orig_h", to: "source.ip" }
         - { from: "zeek.weird.resp_h", to: "destination.ip" }
+        - { from: "zeek.local.src", to: "source.ip" }
+        - { from: "zeek.local.dst", to: "destination.ip" }
       fail_on_error: false
       ignore_missing: true
 

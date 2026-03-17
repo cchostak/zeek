@@ -1,0 +1,13 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	local_events
+#open	2026-03-17-15-15-09
+#fields	ts	uid	src	dst	service	note	details
+#types	time	string	addr	addr	string	string	string
+1773760507.259340	CODez83TrrZOTn2Asl	45.112.92.14	81.2.69.142	{\x0aHTTP\x0a}	high_connection_volume	source 45.112.92.14 reached 10 closed connections
+1773760507.259340	CMGonF30erDQHCmoei	73.162.21.44	172.217.14.206	{\x0aHTTP\x0a}	high_connection_volume	source 73.162.21.44 reached 10 closed connections
+1773760507.259340	COPMB8428UZYwuyB1e	201.44.88.30	172.217.14.206	{\x0aHTTP\x0a}	high_connection_volume	source 201.44.88.30 reached 10 closed connections
+1773760507.259340	CX0rLT3QmAqM894ZX9	189.18.222.9	93.184.216.34	{\x0aHTTP\x0a}	high_connection_volume	source 189.18.222.9 reached 10 closed connections
+#close	2026-03-17-15-15-09

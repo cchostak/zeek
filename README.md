@@ -2,6 +2,10 @@
 
 This repo is built for experimentation with Zeek via Docker Compose.
 
+## Architecture Diagrams
+
+- Sequence diagrams: [docs/sequence-diagrams.md](docs/sequence-diagrams.md)
+
 ## Structure
 
 - `docker-compose.yml`: single Zeek service.
@@ -126,6 +130,7 @@ This repo is built for experimentation with Zeek via Docker Compose.
 - `zeek.dns.*` for `dns.log`
 - `zeek.http.*` for `http.log` (core fields + remaining tail)
 - `zeek.weird.*` for `weird.log`
+- `zeek.local.*` for `local_events.log` (custom detections from `local.zeek`)
 
 Comment/header rows from Zeek logs (lines starting with `#`) are dropped at ingest time.
 
@@ -147,3 +152,14 @@ The bootstrap dashboard includes:
 - Conn protocol mix chart
 - HTTP status distribution chart
 - Top destination countries table (from GeoIP enrichment)
+- Zeek notice counter (`notice.log`)
+- Local detection counter (`local_events.log`)
+
+### Custom Zeek detections in `local.zeek`
+
+The local script now emits `notice.log` and `local_events.log` entries for:
+
+- High connection volume per source IP
+- High DNS request volume per source IP
+- Suspicious HTTP URIs (admin/cmd traversal/injection-like paths)
+- Unexpected HTTP methods (non-GET/POST/HEAD)

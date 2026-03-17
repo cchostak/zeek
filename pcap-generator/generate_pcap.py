@@ -64,8 +64,8 @@ def add_tcp_session(src_ip, dst_ip, src_port, dst_port, request_bytes, response_
 
 
 # Rich HTTP traffic: mix methods, hosts, paths, and response codes.
-http_paths = ["/", "/index.html", "/api/v1/users", "/products/42", "/status"]
-http_methods = ["GET", "GET", "GET", "POST"]
+http_paths = ["/", "/index.html", "/api/v1/users", "/products/42", "/status", "/admin/login?cmd=whoami", "/../../etc/passwd"]
+http_methods = ["GET", "GET", "GET", "POST", "PUT"]
 http_statuses = [200, 200, 201, 302, 404, 500]
 
 for i in range(24):

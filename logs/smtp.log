@@ -3,11 +3,11 @@
 #empty_field	(empty)
 #unset_field	-
 #path	smtp
-#open	2026-03-17-15-02-14
+#open	2026-03-17-15-15-09
 #fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	trans_depth	helo	mailfrom	rcptto	date	from	to	cc	reply_to	msg_id	in_reply_to	subject	x_originating_ip	first_received	second_received	last_reply	path	user_agent	tls	fuids
 #types	time	string	addr	port	addr	port	count	string	string	set[string]	string	string	set[string]	set[string]	string	string	string	string	addr	string	string	string	vector[addr]	string	bool	vector[string]
-1773759733.777817	Ce1izZuQdDpcMd2lb	189.18.222.9	45000	142.250.72.14	25	1	client.example	user@example.com	alerts@example.net	-	-	-	-	-	-	-	-	-	-	-	250 AUTH PLAIN LOGIN	142.250.72.14,189.18.222.9	-	F	(empty)
-1773759733.780715	C51hQc2WbLyxfSmG8e	73.162.21.44	45001	151.101.1.69	25	1	client.example	user@example.com	alerts@example.net	-	-	-	-	-	-	-	-	-	-	-	250 AUTH PLAIN LOGIN	151.101.1.69,73.162.21.44	-	F	(empty)
-1773759733.783618	CUPRs24InHj1xgbp3l	45.112.92.14	45002	210.140.92.183	25	1	client.example	user@example.com	alerts@example.net	-	-	-	-	-	-	-	-	-	-	-	250 AUTH PLAIN LOGIN	210.140.92.183,45.112.92.14	-	F	(empty)
-1773759733.786435	CyhOT445Q5xPzsqZn6	45.112.92.14	45003	151.101.1.69	25	1	client.example	user@example.com	alerts@example.net	-	-	-	-	-	-	-	-	-	-	-	250 AUTH PLAIN LOGIN	151.101.1.69,45.112.92.14	-	F	(empty)
-#close	2026-03-17-15-02-14
+1773760507.221163	CK77tI1gSeIZngyEGg	45.112.92.14	45002	210.140.92.183	25	1	client.example	user@example.com	alerts@example.net	-	-	-	-	-	-	-	-	-	-	-	250 AUTH PLAIN LOGIN	210.140.92.183,45.112.92.14	-	F	(empty)
+1773760507.226371	CA3F7e4x3PMRe5t52g	45.112.92.14	45003	151.101.1.69	25	1	client.example	user@example.com	alerts@example.net	-	-	-	-	-	-	-	-	-	-	-	250 AUTH PLAIN LOGIN	151.101.1.69,45.112.92.14	-	F	(empty)
+1773760507.207593	C4xIxO3VDZ9FnekY4h	189.18.222.9	45000	142.250.72.14	25	1	client.example	user@example.com	alerts@example.net	-	-	-	-	-	-	-	-	-	-	-	250 AUTH PLAIN LOGIN	142.250.72.14,189.18.222.9	-	F	(empty)
+1773760507.215498	CHbnpi1s9hAjzkZUi2	73.162.21.44	45001	151.101.1.69	25	1	client.example	user@example.com	alerts@example.net	-	-	-	-	-	-	-	-	-	-	-	250 AUTH PLAIN LOGIN	151.101.1.69,73.162.21.44	-	F	(empty)
+#close	2026-03-17-15-15-09

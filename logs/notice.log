@@ -1,0 +1,13 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	notice
+#open	2026-03-17-15-15-09
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	fuid	file_mime_type	file_desc	proto	note	msg	sub	src	dst	p	n	peer_descr	actions	email_dest	suppress_for	remote_location.country_code	remote_location.region	remote_location.city	remote_location.latitude	remote_location.longitude
+#types	time	string	addr	port	addr	port	string	string	string	enum	enum	string	string	addr	addr	port	count	string	set[enum]	set[string]	interval	string	string	string	double	double
+1773760507.259340	CODez83TrrZOTn2Asl	45.112.92.14	41006	81.2.69.142	80	-	-	-	tcp	Local::High_Connection_Volume	source 45.112.92.14 crossed 10 closed connections	-	45.112.92.14	81.2.69.142	80	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1773760507.259340	CMGonF30erDQHCmoei	73.162.21.44	41009	172.217.14.206	80	-	-	-	tcp	Local::High_Connection_Volume	source 73.162.21.44 crossed 10 closed connections	-	73.162.21.44	172.217.14.206	80	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1773760507.259340	COPMB8428UZYwuyB1e	201.44.88.30	41019	172.217.14.206	80	-	-	-	tcp	Local::High_Connection_Volume	source 201.44.88.30 crossed 10 closed connections	-	201.44.88.30	172.217.14.206	80	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+1773760507.259340	CX0rLT3QmAqM894ZX9	189.18.222.9	41020	93.184.216.34	80	-	-	-	tcp	Local::High_Connection_Volume	source 189.18.222.9 crossed 10 closed connections	-	189.18.222.9	93.184.216.34	80	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+#close	2026-03-17-15-15-09

@@ -3,31 +3,31 @@
 #empty_field	(empty)
 #unset_field	-
 #path	http
-#open	2026-03-17-15-02-14
+#open	2026-03-17-15-15-09
 #fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	trans_depth	method	host	uri	referrer	version	user_agent	origin	request_body_len	response_body_len	status_code	status_msg	info_code	info_msg	tags	username	password	proxied	orig_fuids	orig_filenames	orig_mime_types	resp_fuids	resp_filenames	resp_mime_types
 #types	time	string	addr	port	addr	port	count	string	string	string	string	string	string	string	count	count	count	string	count	string	set[enum]	string	string	set[string]	vector[string]	vector[string]	vector[string]	vector[string]	vector[string]	vector[string]
-1773759733.620972	CQNL0Z1XlDpCOSjIM6	45.112.92.14	41000	210.140.92.183	80	1	GET	jp.edge.example	/status	-	1.1	Zeek-Learn/2.0	-	0	19	404	Not Found	-	-	(empty)	-	-	-	-	-	-	FzX4Bo3ns0W1oFa9I3	-	text/plain
-1773759733.624894	CRva5VDIyE6bd17mf	189.18.222.9	41001	172.217.14.206	80	1	POST	www.search.example	/api/v1/users	-	1.1	Zeek-Learn/2.0	-	31	19	201	Created	-	-	(empty)	-	-	-	FxyXp5vItDJWgu4sc	-	text/json	FcGY2fYL9YFYh5bEk	-	text/plain
-1773759733.627634	C0oFHZ2M9RLcvmWVdf	201.44.88.30	41002	151.101.1.69	80	1	GET	api.example.net	/	-	1.1	Zeek-Learn/2.0	-	0	19	302	Found	-	-	(empty)	-	-	-	-	-	-	Fixsd423lRt0jatngl	-	text/plain
-1773759733.630329	CmIier42aObjZR6lr9	201.44.88.30	41003	93.184.216.34	80	1	GET	example.com	/products/42	-	1.1	Zeek-Learn/2.0	-	0	19	302	Found	-	-	(empty)	-	-	-	-	-	-	Fq5c472tyG34kzuyvj	-	text/plain
-1773759733.633071	CLgD7W1ygGVSe1yD6c	82.66.14.201	41004	93.184.216.34	80	1	GET	example.com	/status	-	1.1	Zeek-Learn/2.0	-	0	19	200	OK	-	-	(empty)	-	-	-	-	-	-	FzAsef11eBXQwFZHXa	-	text/plain
-1773759733.636111	CjUwFhePKsRw2Ydp6	201.44.88.30	41005	151.101.1.69	80	1	GET	api.example.net	/api/v1/users	-	1.1	Zeek-Learn/2.0	-	0	19	500	Internal Server Error	-	-	(empty)	-	-	-	-	-	-	Fhe03b2gV1h5OaXEh7	-	text/plain
-1773759733.639167	C7DqKc21Qjm8hEGd1l	45.112.92.14	41006	81.2.69.142	80	1	GET	uk.edge.example	/index.html	-	1.1	Zeek-Learn/2.0	-	0	19	404	Not Found	-	-	(empty)	-	-	-	-	-	-	FC7rLX3hnZhSLDgTOb	-	text/plain
-1773759733.642848	CN1qAx4LjSfsoBfe47	73.162.21.44	41007	210.140.92.183	80	1	GET	jp.edge.example	/	-	1.1	Zeek-Learn/2.0	-	0	19	302	Found	-	-	(empty)	-	-	-	-	-	-	FeEiad4KoR2fFxw5ig	-	text/plain
-1773759733.646431	C4hY3A3azb7PUseiy9	45.112.92.14	41008	93.184.216.34	80	1	GET	example.com	/index.html	-	1.1	Zeek-Learn/2.0	-	0	19	200	OK	-	-	(empty)	-	-	-	-	-	-	Fv83jw47ZOzJ59jG52	-	text/plain
-1773759733.649566	C7Hufvro2ZORrUlik	73.162.21.44	41009	172.217.14.206	80	1	GET	www.search.example	/products/42	-	1.1	Zeek-Learn/2.0	-	0	19	500	Internal Server Error	-	-	(empty)	-	-	-	-	-	-	FaL1dG3y550By4Cnpe	-	text/plain
-1773759733.652582	CwWBnJXbMz4B1QPia	45.112.92.14	41010	172.217.14.206	80	1	GET	www.search.example	/status	-	1.1	Zeek-Learn/2.0	-	0	19	201	Created	-	-	(empty)	-	-	-	-	-	-	F9o6717KuMoKtQPel	-	text/plain
-1773759733.655937	CEZxKsOIQtoZgcqVh	201.44.88.30	41011	210.140.92.183	80	1	GET	jp.edge.example	/status	-	1.1	Zeek-Learn/2.0	-	0	19	200	OK	-	-	(empty)	-	-	-	-	-	-	F4CBLG1lwjMSdRNcg5	-	text/plain
-1773759733.659221	CMwORb2ZyoZSdrpOog	45.112.92.14	41012	172.217.14.206	80	1	GET	www.search.example	/status	-	1.1	Zeek-Learn/2.0	-	0	19	200	OK	-	-	(empty)	-	-	-	-	-	-	FJsigm4sWhqoA20BF6	-	text/plain
-1773759733.662411	CPJ4pp13ZdazMDuCM1	45.112.92.14	41013	210.140.92.183	80	1	GET	jp.edge.example	/	-	1.1	Zeek-Learn/2.0	-	0	19	500	Internal Server Error	-	-	(empty)	-	-	-	-	-	-	Foxveu3YaamDRbtpKc	-	text/plain
-1773759733.665253	ChN9Re3NzD63XVHAh9	201.44.88.30	41014	210.140.92.183	80	1	POST	jp.edge.example	/	-	1.1	Zeek-Learn/2.0	-	31	19	404	Not Found	-	-	(empty)	-	-	-	FmpFwR2PetDdK3vJx6	-	text/json	FiIm551XrBQiea82e9	-	text/plain
-1773759733.668117	C3MLkLokP7vBz1n7	201.44.88.30	41015	210.140.92.183	80	1	GET	jp.edge.example	/status	-	1.1	Zeek-Learn/2.0	-	0	19	404	Not Found	-	-	(empty)	-	-	-	-	-	-	F9nPsU2TT5Nl25ej8k	-	text/plain
-1773759733.671224	CLyR563OiKmgUpaHMa	82.66.14.201	41016	172.217.14.206	80	1	GET	www.search.example	/index.html	-	1.1	Zeek-Learn/2.0	-	0	19	200	OK	-	-	(empty)	-	-	-	-	-	-	F7N0Bv1WAKcUKtLW3	-	text/plain
-1773759733.675593	CyC4MP2o75baOqZ4ub	189.18.222.9	41017	172.217.14.206	80	1	GET	www.search.example	/index.html	-	1.1	Zeek-Learn/2.0	-	0	19	302	Found	-	-	(empty)	-	-	-	-	-	-	FzDHEr1y05RoKwAELk	-	text/plain
-1773759733.678712	CE5dys3WKtDmZ769S9	45.112.92.14	41018	172.217.14.206	80	1	GET	www.search.example	/status	-	1.1	Zeek-Learn/2.0	-	0	19	200	OK	-	-	(empty)	-	-	-	-	-	-	FflHNw1ZM2snMdH8T7	-	text/plain
-1773759733.681715	CjEMR01ERZFN0GYfB	201.44.88.30	41019	172.217.14.206	80	1	GET	www.search.example	/products/42	-	1.1	Zeek-Learn/2.0	-	0	19	201	Created	-	-	(empty)	-	-	-	-	-	-	FEKExcKXW50f8oRgk	-	text/plain
-1773759733.685077	CeZEhV1pL4yZW4Dfgf	189.18.222.9	41020	93.184.216.34	80	1	POST	example.com	/api/v1/users	-	1.1	Zeek-Learn/2.0	-	31	19	302	Found	-	-	(empty)	-	-	-	FKLq8c3PUtfguHL6a7	-	text/json	Fex8aF4lkgjgN4bToc	-	text/plain
-1773759733.688110	CxQHlk1WkyO6mK8SGf	73.162.21.44	41021	151.101.1.69	80	1	GET	api.example.net	/status	-	1.1	Zeek-Learn/2.0	-	0	19	201	Created	-	-	(empty)	-	-	-	-	-	-	Fo2z4y1x9ginkXee5c	-	text/plain
-1773759733.692554	C9BVTc1FJr9SZGYSgk	189.18.222.9	41022	151.101.1.69	80	1	GET	api.example.net	/products/42	-	1.1	Zeek-Learn/2.0	-	0	19	302	Found	-	-	(empty)	-	-	-	-	-	-	F0ANnx2USqWwZTPT53	-	text/plain
-1773759733.695720	C8LovQ3yGyhLJMpQN4	45.112.92.14	41023	81.2.69.142	80	1	GET	uk.edge.example	/index.html	-	1.1	Zeek-Learn/2.0	-	0	19	200	OK	-	-	(empty)	-	-	-	-	-	-	FodPW14bF4YsxPA27	-	text/plain
-#close	2026-03-17-15-02-14
+1773760506.911988	CccjJ64VbdD9gOFVMd	45.112.92.14	41000	210.140.92.183	80	1	GET	jp.edge.example	/status	-	1.1	Zeek-Learn/2.0	-	0	19	404	Not Found	-	-	(empty)	-	-	-	-	-	-	F8lgUH2eXg6b0rYO85	-	text/plain
+1773760506.918693	CvoJ9v2x9EcEg0bLVj	189.18.222.9	41001	172.217.14.206	80	1	POST	www.search.example	/api/v1/users	-	1.1	Zeek-Learn/2.0	-	31	19	201	Created	-	-	(empty)	-	-	-	FRdB7q7Y8uxFD9uUf	-	text/json	F9m1FQ1O55Bcxl4M8i	-	text/plain
+1773760506.926881	Cc12Nh29UDYjFaqay6	201.44.88.30	41002	151.101.1.69	80	1	GET	api.example.net	/	-	1.1	Zeek-Learn/2.0	-	0	19	302	Found	-	-	(empty)	-	-	-	-	-	-	FBJSKzTYi8IpCAsX3	-	text/plain
+1773760506.934710	C20rtE36VTgBBF8vRh	201.44.88.30	41003	93.184.216.34	80	1	GET	example.com	/products/42	-	1.1	Zeek-Learn/2.0	-	0	19	302	Found	-	-	(empty)	-	-	-	-	-	-	FlypoZ2eHfMf4KHOx4	-	text/plain
+1773760506.942531	CVhPFW1T4wruwcnAxb	82.66.14.201	41004	93.184.216.34	80	1	GET	example.com	/status	-	1.1	Zeek-Learn/2.0	-	0	19	200	OK	-	-	(empty)	-	-	-	-	-	-	FZ7tIn2pRaUlKYyv6d	-	text/plain
+1773760506.950764	CXCbsV3YRoFCp1qyg5	201.44.88.30	41005	151.101.1.69	80	1	GET	api.example.net	/api/v1/users	-	1.1	Zeek-Learn/2.0	-	0	19	500	Internal Server Error	-	-	(empty)	-	-	-	-	-	-	FQnVxl2OpCjkkycahc	-	text/plain
+1773760506.957627	CODez83TrrZOTn2Asl	45.112.92.14	41006	81.2.69.142	80	1	GET	uk.edge.example	/index.html	-	1.1	Zeek-Learn/2.0	-	0	19	404	Not Found	-	-	(empty)	-	-	-	-	-	-	FiK3Wq3MPhRrAdfED4	-	text/plain
+1773760506.965133	CZYzmw2R1lpZfo8IBe	73.162.21.44	41007	210.140.92.183	80	1	GET	jp.edge.example	/	-	1.1	Zeek-Learn/2.0	-	0	19	302	Found	-	-	(empty)	-	-	-	-	-	-	FvJosG3rQLSK6PmVSb	-	text/plain
+1773760506.972007	CMPXIf2ammPgjqsR88	45.112.92.14	41008	93.184.216.34	80	1	GET	example.com	/index.html	-	1.1	Zeek-Learn/2.0	-	0	19	200	OK	-	-	(empty)	-	-	-	-	-	-	F1LlRf1oh481E96Ntf	-	text/plain
+1773760506.979393	CMGonF30erDQHCmoei	73.162.21.44	41009	172.217.14.206	80	1	GET	www.search.example	/products/42	-	1.1	Zeek-Learn/2.0	-	0	19	500	Internal Server Error	-	-	(empty)	-	-	-	-	-	-	Fi6zC1Jny2ntWrWN9	-	text/plain
+1773760506.987605	CX63dl34QDHCk3vkzg	45.112.92.14	41010	172.217.14.206	80	1	GET	www.search.example	/status	-	1.1	Zeek-Learn/2.0	-	0	19	201	Created	-	-	(empty)	-	-	-	-	-	-	FvVC0c4n8vjzlwfwhj	-	text/plain
+1773760506.994717	CL5xOExF5XxwHjTYh	201.44.88.30	41011	210.140.92.183	80	1	GET	jp.edge.example	/status	-	1.1	Zeek-Learn/2.0	-	0	19	200	OK	-	-	(empty)	-	-	-	-	-	-	FdokmwPt2sGuUJyTh	-	text/plain
+1773760507.002362	CdjqrO2a9b8b8LJ8ha	45.112.92.14	41012	172.217.14.206	80	1	GET	www.search.example	/status	-	1.1	Zeek-Learn/2.0	-	0	19	200	OK	-	-	(empty)	-	-	-	-	-	-	F6Yic7qMJelFUjux8	-	text/plain
+1773760507.010440	CPZBRD3u5EvBnHteT6	45.112.92.14	41013	210.140.92.183	80	1	GET	jp.edge.example	/	-	1.1	Zeek-Learn/2.0	-	0	19	500	Internal Server Error	-	-	(empty)	-	-	-	-	-	-	FvdD7D48b2XLotaPPl	-	text/plain
+1773760507.016422	C3PRNa3GiURsPz2jK5	201.44.88.30	41014	210.140.92.183	80	1	POST	jp.edge.example	/	-	1.1	Zeek-Learn/2.0	-	31	19	404	Not Found	-	-	(empty)	-	-	-	Fe1FCB2RthgNbwGsu2	-	text/json	Fem5c81fMaQJMnwyD6	-	text/plain
+1773760507.020765	CDQWrM2ZYk2oMNv629	201.44.88.30	41015	210.140.92.183	80	1	GET	jp.edge.example	/status	-	1.1	Zeek-Learn/2.0	-	0	19	404	Not Found	-	-	(empty)	-	-	-	-	-	-	FmpOXT0nixSCQyqhc	-	text/plain
+1773760507.027611	C9o0NT12fgrwXWjuU6	82.66.14.201	41016	172.217.14.206	80	1	GET	www.search.example	/index.html	-	1.1	Zeek-Learn/2.0	-	0	19	200	OK	-	-	(empty)	-	-	-	-	-	-	FRcoJh4Hz8cJXwo4zl	-	text/plain
+1773760507.034686	CyUqUD2R8lltEbUzE9	189.18.222.9	41017	172.217.14.206	80	1	GET	www.search.example	/index.html	-	1.1	Zeek-Learn/2.0	-	0	19	302	Found	-	-	(empty)	-	-	-	-	-	-	FGvmEjk6tkbTcpmf	-	text/plain
+1773760507.041977	CAeCVtpsrUCZmkpZ9	45.112.92.14	41018	172.217.14.206	80	1	GET	www.search.example	/status	-	1.1	Zeek-Learn/2.0	-	0	19	200	OK	-	-	(empty)	-	-	-	-	-	-	FkppRDMRnTddFTwu3	-	text/plain
+1773760507.048613	COPMB8428UZYwuyB1e	201.44.88.30	41019	172.217.14.206	80	1	GET	www.search.example	/products/42	-	1.1	Zeek-Learn/2.0	-	0	19	201	Created	-	-	(empty)	-	-	-	-	-	-	FkMoLI2eVB7pfzgKvf	-	text/plain
+1773760507.055181	CX0rLT3QmAqM894ZX9	189.18.222.9	41020	93.184.216.34	80	1	POST	example.com	/api/v1/users	-	1.1	Zeek-Learn/2.0	-	31	19	302	Found	-	-	(empty)	-	-	-	FQf5If3HXmCEUZNA05	-	text/json	FUAYk13N2H9QWOnHJj	-	text/plain
+1773760507.061385	CHhuQy2yqfrOfVfqq4	73.162.21.44	41021	151.101.1.69	80	1	GET	api.example.net	/status	-	1.1	Zeek-Learn/2.0	-	0	19	201	Created	-	-	(empty)	-	-	-	-	-	-	FLNSaD4T2Sob2kM2i3	-	text/plain
+1773760507.065985	COUMiTuh5ZBvEEcxi	189.18.222.9	41022	151.101.1.69	80	1	GET	api.example.net	/products/42	-	1.1	Zeek-Learn/2.0	-	0	19	302	Found	-	-	(empty)	-	-	-	-	-	-	FYCBulcnoRJ5qmk6i	-	text/plain
+1773760507.070478	C6Bt3z3zoUqi4kN0Nf	45.112.92.14	41023	81.2.69.142	80	1	GET	uk.edge.example	/index.html	-	1.1	Zeek-Learn/2.0	-	0	19	200	OK	-	-	(empty)	-	-	-	-	-	-	FtCFXDXdX6uPItxMl	-	text/plain
+#close	2026-03-17-15-15-09
